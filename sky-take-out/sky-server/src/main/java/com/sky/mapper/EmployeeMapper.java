@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Update;
+import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 
@@ -29,4 +31,12 @@ public interface EmployeeMapper {
     //分页查询员工数据
 
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+    /*
+    * 根据主键动态修改属性*/
+
+    void update(Employee employee);
+//根据id查询员工
+    Employee getById(Long id);
+    //根据id修改员工
+
 }
